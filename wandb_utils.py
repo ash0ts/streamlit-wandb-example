@@ -8,49 +8,9 @@ load_dotenv(find_dotenv())
 api = wandb.Api()
 
 
-class IFrame(object):
-    #TODO: Rename
-
-    def __init__(self, path=None, opts=None):
-        self.path = path
-        self.api = wandb.Api()
-        self.opts = opts or {}
-        self.displayed = False
-        self.height = self.opts.get("height", 420)
-
-    # def maybe_display(self) -> bool:
-    #     if not self.displayed and (self.path or wandb.run):
-    #         display(self)
-    #     return self.displayed
-
-    def to_html(self):
-        try:
-            self.displayed = True
-            if self.opts.get("workspace", False):
-                if self.path is None and wandb.run:
-                    self.path = wandb.run.path
-            if isinstance(self.path, str):
-                object = self.api.from_path(self.path)
-            else:
-                object = wandb.run
-            if object is None:
-                if wandb.Api().api_key is None:
-                    return "You must be logged in to render wandb, run `wandb.login()` or pass environment variables"
-                else:
-                    object = self.api.project(
-                        "/".join(
-                            [
-                                wandb.Api().default_entity,
-                                wandb.util.auto_project_name(None),
-                            ]
-                        )
-                    )
-            html_object = object.to_html(self.height, hidden=False)
-            jupyterless_html_object = html_object.replace("?jupyter=true", "")
-            return jupyterless_html_object
-        except wandb.Error as e:
-            self.displayed = False
-            return "Can't display wandb interface<br/>{}".format(e)
+def get_run_iframe(run_path, height=720):
+    run = api.from_path(run_path)
+    return run.to_html(height=height, hidden=False)
 
 
 def get_projects(entity, height=720):
@@ -62,7 +22,6 @@ def get_projects(entity, height=720):
 
 def get_runs(entity, project):
 
-    # entity, project = "<entity>", "<project>"  # set to your entity and project
     runs = api.runs(f"{entity}/{project}")
 
     id_list, state_list, summary_list, config_list, name_list = [], [], [], [], []

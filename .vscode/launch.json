@@ -4,11 +4,19 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [{
-        "name": "Streamlit Run",
-        "type": "python",
-        "request": "launch",
-        "module": "streamlit",
-        "args": ["run", "wandb_streamlit_app.py"],
-        "console": "integratedTerminal"
-    }]
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Streamlit Run",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": ["run", "wandb_streamlit_app.py"],
+            "console": "integratedTerminal"
+        }
+    ]
 }
