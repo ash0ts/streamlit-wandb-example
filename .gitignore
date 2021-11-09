@@ -112,3 +112,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+example.html
+artifacts
+.vscode
+.gitattributes
+wandb
