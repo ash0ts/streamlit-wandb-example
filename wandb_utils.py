@@ -1,4 +1,3 @@
-# Referenced from: https://github.com/wandb/client/blob/0ea159693996df0f22b408ba38512178bb63104d/wandb/jupyter.py#L55
 import wandb
 from dotenv import load_dotenv, find_dotenv
 import pandas as pd
