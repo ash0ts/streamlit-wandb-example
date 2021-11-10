@@ -8,13 +8,19 @@ Example repo to show off the different possibilties when utilizing both W&B and 
 
 2. Use WANDB traiditionally to log artifacts that can be pulled from an experiment to visualize traditionally. This is shown in the application when selecting the `Use WANDB Logging` option. In this variant we provide a minimal example of an WANDB experiment that can be run to the users account upon click. When said experiment is finished, it should load in a logged HTML page saved in WANDB to the file directory of the Streamlit project to then be displayed by Stteamlit.
 
-## How to run
+## Install
+
+```
+pip install -r requirements.txt
+```
 
 Generate a `.env` file in the root of the project with variables:
 
 ```
-WANDB_API_KEY=<API_KEY>
+WANDB_API_KEY=<WANDB_API_KEY>
 WANDB_ENTITY=<WANDB_ENTITY_NAME>
 ```
 
-To run use command: `streamlit run wandb_streamlit_app.py`
+## Usage
+
+To run streamlit on localhost use command: `streamlit run wandb_streamlit_app.py`
