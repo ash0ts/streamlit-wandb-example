@@ -117,3 +117,5 @@ artifacts
 .vscode
 .gitattributes
 wandb
+
+*.DS_Store

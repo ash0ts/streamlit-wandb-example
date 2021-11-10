@@ -24,3 +24,17 @@ WANDB_ENTITY=<WANDB_ENTITY_NAME>
 ## Usage
 
 To run streamlit on localhost use command: `streamlit run wandb_streamlit_app.py`
+
+## Examples
+
+### WANDB Project Dashboard
+
+<img src="./static/gifs/embed_wandb_project_dash.gif"/>
+
+### WANDB Run Dashboard
+
+<img src="./static/gifs/embed_wandb_run_dash.gif"/>
+
+### WANDB HTML Artifact rendered via Streamlit
+
+<img src="./static/gifs/use_wandb_logging.gif"/>
