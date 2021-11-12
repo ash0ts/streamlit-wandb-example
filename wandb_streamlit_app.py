@@ -8,18 +8,12 @@ import json
 
 load_dotenv(find_dotenv())
 
-# TODO: Allow user to login and input their API code
-# TODO: Add button to make and train a run showing off all useful run stuff (need to unify this for demos)
-# TODO: Allow users to see how to use artifacts and then use normal streamlit
-
 
 def main():
     st.title("Streamlit w/ WANDB")
     menu = ["Embed WANDB", "Use WANDB Logging"]
     menu_choice = st.sidebar.selectbox('Menu', menu)
 
-    # TODO: Create a central demo user? Make a CLI arg?
-    # TODO: Read size of available screen in streamlit to use as height/width
     entity = os.environ.get("WANDB_ENTITY", "demo-user")
     height = 720
 
@@ -97,6 +91,5 @@ def main():
             # demo_html.close()
 
 
-# TODO: Add cli arguments
 if __name__ == '__main__':
     main()

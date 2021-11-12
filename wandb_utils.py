@@ -82,7 +82,7 @@ def log_example_html_to_wandb():
 
     demo_artifacts = wandb.Artifact("demo_artifacts", type="demo")
     demo_html = wandb.Html(dest_path)
-    # TODO: Add more demo artifacts
+    # Here you can add your example artifacts
     demo_artifacts.add(demo_html, "demo_html")
     run.log_artifact(demo_artifacts)
     run.finish()
